@@ -1,0 +1,38 @@
+<!--
+[Ajax]
+fetch를 이용해서 다른 파일의 text내용을 가져올 수 있다.
+비동기식 실행으로 마지막으로 실행된다.
+response의 status가 200이면 found. 404면 not found
+-->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <article>
+    </article>
+    <input type="button" value="fetch" onclick="
+    /* fetch('html').then(function(response){
+      response.text().then(function(text){
+        document.querySelector('article').innerHTML = text;
+      })
+    })
+    */
+    //Asynchronous
+    fetch('html').then(function(response){
+      console.log(response.status);
+      if(response.status == '404'){
+        alert('file was not found');
+      }
+      else {
+        alert('file was successfully found');
+      }
+    });
+    console.log('1');
+    console.log('2');
+    ">
+    </input>
+  </body>
+</html>
